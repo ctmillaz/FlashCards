@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'kotlin-android'
+//apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 33
+    buildToolsVersion '33.0.1'
     defaultConfig {
         applicationId "com.example.terin.asu_flashcardapp"
-        minSdkVersion 15
-        targetSdkVersion 25
+        minSdkVersion 26
+        targetSdkVersion 33
         //maxSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -20,16 +20,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'com.example.terin.asu_flashcardapp'
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.5.1', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:design:25.3.1'
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    //implementation 'androidx.appcompat:appcompat:1.6.1'
+    //implementation 'com.google.android.material:material:1.8.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    //implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
